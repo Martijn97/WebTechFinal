@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 	</head>
-	<body ng-app="InstaCheck">
+	<body ng-app="InstaCheck" class="world">
 		<div class="container">
 			<div class="Row" >
 				<div class="col-md-12 col-md-offset-0">
@@ -17,9 +17,9 @@
     	    	</div>
    			</div>
    		</div>
-   		<script type="text/ng-template" id="/home.html">
+   		<script type="text/ng-template" id="/home.html" >
 			<div class="Page header">
-				<h1 style="display: inline-block;">InstaCheck</h1>&nbsp;
+				<a href="#/home"><h1>InstaCheck</h1></a>
 				<div class='btn-toolbar pull-right middle float-vertical-align'>
             		<div class='btn-group'>
                 		<a type='button' class='glyphicon glyphicon-info-sign btn btn-secondary' href="#/about" style='color:black;'> <b>About</b></a>
@@ -31,12 +31,23 @@
                 		<a type='button' class='glyphicon glyphicon-user btn btn-primary' href="#/admin" style='color:black;'> <b>Admin</b></a>
                 	</div>
 				</div>
+			
+			<div class="container" style="margin-top: 30px">
+					<div class="input-group pull-right col-md-6">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+						    <button class="btn btn-default" type="button">Go!</button>
+						</span>
+					</div>
+				</div>
+
+			</div>
 		</script>
 
 		<!-- about screen -->
 		<script type="text/ng-template" id="/about.html">
 			<div class="Page header">
-				<h1 style="display: inline-block;">InstaCheck</h1>&nbsp;
+				<a href="#/home"><h1>InstaCheck</h1></a>
 				<div class='btn-toolbar pull-right middle float-vertical-align'>
             		<div class='btn-group'>
                 		<a type='button' class='glyphicon glyphicon-info-sign btn btn-secondary' href="#/about" style='color:black;'> <b>About</b></a>
@@ -49,13 +60,18 @@
                 	</div>
 				</div>
 			</div>
-				content about page
+			<div class="container">
+				<div class="well block">
+					<p><b>
+						Hi, Welcome at our site! This site is the result of a project of four students of the Technical university Eindhoven. We made this site for the subject web technology. Enjoy!
+					</b></p>
+			</div>
 		</script>
 
 		<!-- help screen -->
 		<script type="text/ng-template" id="/help.html">
 			<div class="Page header">
-				<h1 style="display: inline-block;">InstaCheck</h1>&nbsp;
+				<a href="#/home"><h1>InstaCheck</h1></a>
 				<div class='btn-toolbar pull-right middle float-vertical-align'>
             		<div class='btn-group'>
                 		<a type='button' class='glyphicon glyphicon-info-sign btn btn-secondary' href="#/about" style='color:black;'> <b>About</b></a>
@@ -68,13 +84,19 @@
                 	</div>
 				</div>
 			</div>
-				content help page
+			<div class="container">
+				<div class="well block">
+					<p><b>
+						At this page we explain a bit more about how to use our app and how we build it.
+					</b></p>
+				</div>
+			</div>
 		</script>
 
 		<!-- admin screen -->
 		<script type="text/ng-template" id="/admin.html">
 			<div class="Page header">
-				<h1 style="display: inline-block;">InstaCheck</h1>&nbsp;
+				<a href="#/home"><h1>InstaCheck</h1></a>
 				<div class='btn-toolbar pull-right middle float-vertical-align'>
             		<div class='btn-group'>
                 		<a type='button' class='glyphicon glyphicon-info-sign btn btn-secondary' href="#/about" style='color:black;'> <b>About</b></a>
@@ -87,7 +109,15 @@
                 	</div>
 				</div>
 			</div>
-				content admin page
+			<div class="container">
+				<div class="well block">
+					<p><b>
+						admin page.
+					</b></p>
+				</div>
+			</div>
 		</script>
 	</body>
 </html>
+
+<!-- Hi, Welcome at our site! This site is the result of a project of four students of the Technical university Eindhoven. We made this site for the subject web technology. Enjoy!<br><br>With kind regards,<br><br> Surja, Julia, Martijn and Danny -->

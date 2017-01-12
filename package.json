@@ -20,8 +20,10 @@
     "fs": "0.0.2",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^4.7.6",
+    "react-bootstrap": "^0.30.7",
     "react-materialize": "^0.17.7",
     "react-router-redux": "^4.0.7",
+    "react-search-bar": "^1.1.4",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
     "sql.js": "^0.3.2"

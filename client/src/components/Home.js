@@ -19,7 +19,7 @@ export default class Home extends React.Component {
 		return (
 			<div>
 				<Row>
-					<Col s={12}><h1 style={{"textAlign": "center"}} className="teal-text">Authentication succeeded, yay!!</h1></Col>
+					<Col s={12}><h1 style={{"textAlign": "center"}} className="teal-text">Authentication succeeded, yay</h1></Col>
 				</Row>
 			</div>
 		);

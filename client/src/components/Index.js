@@ -3,9 +3,6 @@ import {Row, Col, Button, Icon} from 'react-materialize';
 import {Link} from 'react-router';
 
 export default class Index extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	render() {
 

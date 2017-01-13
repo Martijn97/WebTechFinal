@@ -2,9 +2,6 @@ import React from 'react';
 import {Row, Col} from 'react-materialize';
 
 export default class Home extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	componentWillMount() {
 		this.getToken();

@@ -8,7 +8,7 @@ export default class Index extends React.Component {
 		return (
 			<div>
 				<Row>
-					<Col s={12} style={{"textAlign": "center"}}><h1 className="teal-text">Welcome to Instagram-world!</h1></Col>
+					<Col s={12} style={{"textAlign": "center"}}><h1 className="teal-text">Welcome to Instagram world!</h1></Col>
 				</Row>
 				<Row>
 					<Col s={12} style={{"textAlign": "center"}}>

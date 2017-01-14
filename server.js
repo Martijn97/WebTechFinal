@@ -1,10 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const reactRouter = require('react-router');
-const ReactDOM = require('react-dom');
-const RouterContext = require('react-router/lib/RouterContext');
-const routes = require('client/src/routes');
 const app = express();
 // const Post = require('./db/models/posts');
 
@@ -14,29 +10,7 @@ app.use(bodyParser.json());
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-  	reactRouter.match({routes, location: req.url}, (err, redirectLocation, renderProps) => {
-  		if (err) {
-  			return res.status(500).send(err.message);
-  		}
-
-  		if (redirectLocation) {
-  			return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-  		}
-
-  		var markup;
-
-  		if (renderProps) {
-  			markup = renderToString(<RouterContext {...renderProps}/>);
-  		} else {
-  			res.status(404);
-  		}
-
-  		return res.render('index' {markup});
-  	});
-  	// res.sendFile('client/build/index.html');
-  });
+  app.use(express.static(__dirname + '/client/build'));
 }
 
 // const database = 'mongodb://username:password@databaseurl';

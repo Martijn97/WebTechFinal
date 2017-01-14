@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
   		var markup;
 
   		if (renderProps) {
-  			markup = ReactDOM.renderToString(<RouterContext {...renderProps}/>);
+  			markup = renderToString(<RouterContext {...renderProps}/>);
   		} else {
   			res.status(404);
   		}

@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.all('*', (req, res) => {
-  	res.sendFile('client/build/index.html');
+  	console.log(req);
+  	// res.sendFile('client/build/index.html');
   });
 }
 

@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
+  app.all('/*', (req, res) => {
+  	res.render('client/build');
+  })
 }
 
 // const database = 'mongodb://username:password@databaseurl';

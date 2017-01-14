@@ -8,10 +8,10 @@ export default class Home extends React.Component {
 	}
 
 	getToken() {
-		let queryParams = this.props.location.query;
-		let accessToken = queryParams.access_token;
-		console.log(queryParams);
-		console.log(accessToken);
+		// let queryParams = this.props.params.access_token;
+		// let accessToken = queryParams.access_token;
+		// console.log(queryParams);
+		// console.log(accessToken);
 	}
 
 	render() {

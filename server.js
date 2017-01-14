@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-  app.all('/*', (req, res) => {
+  app.all('/*', (err, req, res, next) => {
+  	if (err) {
+  		console.error(err.stack);
+  		return next(err);
+  	}
   	res.render('client/build');
   })
 }

@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "NODE_ENV=development babel-node server.js",
+    "server": "babel-node server.js",
     "client": "babel-node start-client.js"
   },
   "devDependencies": {

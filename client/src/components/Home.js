@@ -12,7 +12,7 @@ export default class Home extends React.Component {
 		// let accessToken = queryParams.access_token;
 		// console.log(queryParams);
 		// console.log(accessToken);
-		console.log(location.hash);
+		console.log(this.props.location.hash.match(/^#?(.*)$/)[1]);
 	}
 
 	render() {
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 			cardItems.push(
 				<Col s={12} m={6} l={4} key={i}>
 				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='cat_1.jpg'>Funny cat</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='#'>Link to Post</a>]}>
-				    	likes: 
+				    	cute!
 				    </Card>
 				</Col>
 			);

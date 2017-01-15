@@ -4,8 +4,8 @@ import {Footer, Navbar, NavItem} from 'react-materialize';
 const App = ({children}) => (
 	<div>
 		<Navbar className="teal lighten-2" brand='Instagram World!' style={{paddingLeft: "1em", paddingRight: "1em"}}right>
-		  <NavItem href='#'>About</NavItem>
-		  <NavItem href='#'>Help</NavItem>
+		  <NavItem href='/about'>About</NavItem>
+		  <NavItem href='/help'>Help</NavItem>
 		</Navbar>
 		<div className="container">
 			{children}

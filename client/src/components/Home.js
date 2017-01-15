@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Input, Icon, Col, Card, CardTitle} from 'react-materialize';
+import {Row, Input, Icon, Col, Card, CardTitle, Pagination} from 'react-materialize';
 
 export default class Home extends React.Component {
 
@@ -22,8 +22,9 @@ export default class Home extends React.Component {
 		for (let i = 0; i < 15; i++) {
 			cardItems.push(
 				<Col s={12} m={6} l={4} key={i}>
-				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='cat_1.jpg'>Funny cat</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='#'>Link to Post</a>]}>
-				    	cute!
+				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='cat_1.jpg'>Funny cat</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='https:/www.instagram.com'>Link to Post</a>]}>
+				    	User: username<br></br>
+				    	Likes: number
 				    </Card>
 				</Col>
 			);

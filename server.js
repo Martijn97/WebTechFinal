@@ -25,6 +25,7 @@ app.get('*', (req, res) => {
 });
 
 app.get('/auth', (req, res) => {
+	console.log('we\'re at auth!');
 	res.redirect('https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/home&response_type=code&scope=public_content');
 });
 

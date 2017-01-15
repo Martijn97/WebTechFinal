@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 			cardItems.push(
 				<Col s={12} m={6} l={4} key={i}>
 				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='cat_1.jpg'>Funny cat</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='#'>Link to Post</a>]}>
-				    	cute!
+				    	likes: 
 				    </Card>
 				</Col>
 			);

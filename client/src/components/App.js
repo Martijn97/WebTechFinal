@@ -10,7 +10,7 @@ const App = ({children}) => (
 		<div className="container">
 			{children}
 		</div>
-		<Footer className="teal lighten-2" copyrights="&copy; 2017 Copyright Text" style={{bottom: 0, position: "absolute", width: "100vw"}}>
+		<Footer className="teal lighten-2 page-footer" copyrights="&copy; 2017 Copyright Text" style={{width: "100vw"}}>
 		    <h5 className="white-text">InstaWorld</h5>
 		    <p className="grey-text text-lighten-4">Final project of the course Web technology. Made by Surja, Julia and Martijn.</p>
 		</Footer>

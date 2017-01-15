@@ -16,6 +16,18 @@ export default class Home extends React.Component {
 
 	render() {
 
+		let cardItems = [];
+
+		for (let i = 0; i < 15; i++) {
+			cardItems.push(
+				<Col s={12} m={6} l={4} key={i}>
+				    <Card className='blue-grey darken-0 materialboxed white-text' title='Title Example 1' style={{minHeight: "350px"}}actions={[<a href='#'>Link to Post</a>]}>
+				    	I am a very simple card.
+				    </Card>
+				</Col>
+			);
+		}
+
 		return (
 			<div>
 				<Row>
@@ -23,26 +35,7 @@ export default class Home extends React.Component {
 				  <Input s={6} label="Location" validate type='tel'><Icon>location_on</Icon></Input>
 				</Row>
 				<Row>
-					<Col s={12} m={6} l={3}>
-					    <Card className='blue-grey darken-0 materialboxed' textClassName='white-text' title='Title Example 1' actions={[<a href='#'>Link to Post</a>]}>
-					    I am a very simple card.
-					    </Card>
-					</Col>
-					<Col s={12} m={6} l={3}>
-					    <Card className='blue-grey darken-0 materialboxed' textClassName='white-text' title='Title Example 2' actions={[<a href='#'>Link to Post</a>]}>
-					    I am a very simple card.
-					    </Card>
-					</Col>
-					<Col s={12} m={6} l={3}>
-					    <Card className='blue-grey darken-0 materialboxed' textClassName='white-text' title='Title Example 2' actions={[<a href='#'>Link to Post</a>]}>
-					    I am a very simple card.
-					    </Card>
-					</Col>
-					<Col s={12} m={6} l={3}>
-					    <Card className='blue-grey darken-0 materialboxed' textClassName='white-text' title='Title Example 2' actions={[<a href='#'>Link to Post</a>]}>
-					    I am a very simple card.
-					    </Card>
-					</Col>
+					{cardItems}
 				</Row>
 			</div>
 		);

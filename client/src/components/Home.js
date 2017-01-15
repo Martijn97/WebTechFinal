@@ -1,61 +1,65 @@
 import React from 'react';
 import {Row, Input, Icon, Col, Card, CardTitle} from 'react-materialize';
-import axios from 'axios';
 
 export default class Home extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			tagSearchValue: '',
-			locationSearchValue: '',
-			data: {}
-		};
-		this.access_token = '';
-		this.handleTagSearch = this.handleTagSearch.bind(this);
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		tagSearchValue: '',
+	// 		locationSearchValue: '',
+	// 		data: {}
+	// 	};
+	// 	this.access_token = '';
+	// 	this.handleTagSearch = this.handleTagSearch.bind(this);
 
-	}
+	// }
 
-	componentWillMount() {
-		this.getToken();
-	}
+	// componentWillMount() {
+	// 	this.getToken();
+	// }
 
-	getToken() {
-		let hash = this.props.location.hash.match(/^#?(.*)$/)[1];
-		this.access_token = hash.substring(hash.indexOf("=")+1, hash.length);
-	}
+	// getToken() {
+	// 	let hash = this.props.location.hash.match(/^#?(.*)$/)[1];
+	// 	this.access_token = hash.substring(hash.indexOf("=")+1, hash.length);
+	// }
 
-	handleTagSearch(e) {
-		const value = e.target.value;
-		console.log(value);
-		console.log(this.state.tagSearchValue);
+	// handleTagSearch(e) {
+	// 	const value = e.target.value;
+	// 	console.log(value);
+	// 	console.log(this.state.tagSearchValue);
 
-		this.setState({
-			tagSearchValue: value,
-		});
+	// 	this.setState({
+	// 		tagSearchValue: value,
+	// 	});
 
-		if (value === '') {
-			this.setState({
-				tagSearchValue: ''
-			});
+	// 	if (value === '') {
+	// 		this.setState({
+	// 			tagSearchValue: ''
+	// 		});
 
-		} else {
-			let _this = this;
-			this.apiRequest = 
-				axios
-					.get('https://api.instagram.com/v1/tags/' + value + '/media/recent?access_token=' + this.access_token)
-					.then(result => {
-						_this.setState({
-							data: result.data
-						});
-					})
-			console.log(this.state.data)
-		}
-	}
+	// 	} else {
+	// 		let _this = this;
+	// 		this.apiRequest = 
+	// 			fetch('https://api.instagram.com/v1/tags/' + value + '/media/recent?access_token=' + this.access_token + '&callback=?',
+	// 				{ 	
+	// 					mode: 'cors',
+	// 					headers: {
+ //                    		'Accept': 'application/json'
+ //                		}
+	// 				})
+	// 				.then(result => {
+	// 					_this.setState({
+	// 						data: result.data
+	// 					});
+	// 				})
+	// 		console.log(this.state.data)
+	// 	}
+	// }
 
-	componentWillUnmount() {
-		this.serverRequest.abort();
-	}
+	// componentWillUnmount() {
+	// 	this.serverRequest.abort();
+	// }
 
 	render() {
 
@@ -74,8 +78,8 @@ export default class Home extends React.Component {
 		return (
 			<div>
 				<Row>
-					<Input s={6} value={this.state.tagSearchValue} onChange={this.handleTagSearch} label="Search" validate><Icon>search</Icon></Input>
-					<Input s={6} value={this.state.locationSearchValue} label="Location" validate type='tel'><Icon>location_on</Icon></Input>
+					<Input s={6} label="Search" validate><Icon>search</Icon></Input>
+					<Input s={6} label="Location" validate type='tel'><Icon>location_on</Icon></Input>
 				</Row>
 				<Row>
 					{cardItems}

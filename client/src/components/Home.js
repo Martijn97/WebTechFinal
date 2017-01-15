@@ -12,6 +12,7 @@ export default class Home extends React.Component {
 		// let accessToken = queryParams.access_token;
 		// console.log(queryParams);
 		// console.log(accessToken);
+		console.log(location.hash);
 	}
 
 	render() {

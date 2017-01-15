@@ -20,9 +20,9 @@ app.use(function(req, res, next) {
 });
 
 // Express only serves static assets in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(__dirname + '/client/build'));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(__dirname + '/client/build'));
+// }
 
 app.get('/*', (req, res) => {
 

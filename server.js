@@ -49,7 +49,7 @@ exports.insta_auth = (req, res) => {
 	});
 };
 
-app.get('/home', (req, res) => {
+app.get('/home/:access_token', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 

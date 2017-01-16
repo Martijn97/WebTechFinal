@@ -43,8 +43,7 @@ exports.insta_auth = (req, res) => {
 			console.log(err.body);
 			res.send("Didn't work");
 		} else {
-			console.log("Yay! access token is" + result.access_token);
-			res.send("you made it!");
+			res.send("Yay! access token is" + result.access_token);
 		}
 	});
 };

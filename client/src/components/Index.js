@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Col, Button, Icon} from 'react-materialize';
-import browserHistory from 'react-router';
+import {browserHistory} from 'react-router';
 import jsonp from 'jsonp';
 
 export default class Index extends React.Component {

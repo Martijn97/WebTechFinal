@@ -7,6 +7,7 @@ const routes = require('./client/src/routes');
 const match = require('react-router').match;
 const RoutingContext = require('react-router').RouterContext;
 const ReactDOM = require('react-dom/server');
+const request = require('request');
 // const Post = require('./db/models/posts');
 
 app.set('port', (process.env.PORT || 3001));
@@ -35,24 +36,26 @@ app.get('/insta_auth', (req, res) => {
 
 	res.send(accessCode);
 
-	// request.post('https://api.instagram.com/oauth/access_token',
-	// {
-	// 	form: {
-	// 		client_id: '1159204fb5b94378904fa06932f07da6',
-	// 		client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
-	// 		grant_type: 'authorization_code',
-	// 		redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
-	// 		code: accessCode
-	// 	}
-	// }, (err, response, body) => {
-	// 	if (err) {
-	// 		console.log("Error in posting", err);
-	// 	} else {
-	// 		console.log(response);
-	// 		console.log(body.json());
-	// 		res.send(response);
-	// 	}
-	// })
+	request.post('https://api.instagram.com/oauth/access_token',
+	{	
+		json: {
+			form: {
+				client_id: '1159204fb5b94378904fa06932f07da6',
+				client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
+				grant_type: 'authorization_code',
+				redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
+				code: accessCode
+			}
+		}	
+	}, (err, response, body) => {
+		if (err) {
+			console.log("Error in posting", err);
+		} else {
+			console.log(response);
+			console.log(body.json());
+			res.send(response);
+		}
+	})
 });
 
 

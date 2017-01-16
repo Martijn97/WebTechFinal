@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row, Col, Button, Icon} from 'react-materialize';
+import browserHistory from 'react-router';
 import jsonp from 'jsonp';
 
 export default class Index extends React.Component {
@@ -10,14 +11,7 @@ export default class Index extends React.Component {
 	}
 
 	getAuthLink() {
-		jsonp('https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/insta_auth&response_type=code&scope=public_content', 
-			null, (err, data) => {
-				if (err) {
-					console.error(err.message);
-				} else {
-					console.log(data);
-			}
-		});
+		browserHistory.push('/auth');
 	}
 
 	render() {
@@ -37,4 +31,5 @@ export default class Index extends React.Component {
 			</div>
 		);
 	}
+
 };

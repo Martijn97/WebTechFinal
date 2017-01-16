@@ -8,6 +8,7 @@ const match = require('react-router').match;
 const RoutingContext = require('react-router').RouterContext;
 const ReactDOM = require('react-dom/server');
 const request = require('request');
+const instagram = require('instagram-node').instagram();
 // const Post = require('./db/models/posts');
 
 app.set('port', (process.env.PORT || 3001));
@@ -25,27 +26,31 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/client/build'));
 }
 
-app.get('/insta_auth', (req, res) => {
-	let accessCode = req.query.code;
-	console.log(accessCode);
-
-	request.post('https://api.instagram.com/oauth/access_token',
-	{	
-		form: {
-			client_id: '1159204fb5b94378904fa06932f07da6',
-			client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
-			grant_type: 'authorization_code',
-			redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
-			code: accessCode
-		}
-	}, (err, response, body) => {
-		if (err) {
-			console.log("Error in posting", err);
-		} else {
-			res.send(response.body[access_token]);
-		}
-	})
+instagram.use({
+	client_id: 1159204fb5b94378904fa06932f07da6,
+	client_secret: 07dbbb23552d4c77929cd70986bbe8a3
 });
+
+let redirect_uri = "http://webtechnologytue.herokuapp.com/insta_auth";
+
+exports.authorize_user = (req, res) => {
+	res.redirect(instagram.get_authorization_url(redirect_uri, {scope: ['public_content']}));
+};
+
+exports.insta_auth = (req, res) => {
+	instagram.authorize_user(req.query.code, redirect_uri, (err, result) => {
+		if (err) {
+			console.log(err.body);
+			res.send("Didn't work");
+		} else {
+			console.log("Yay! access token is" + result.access_token);
+			res.send("you made it!");
+		}
+	});
+};
+
+app.get('/auth', exports.authorize_user);
+app.get('/insta_auth', exports.insta_auth);
 
 app.get('/*', (req, res) => {
 	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {

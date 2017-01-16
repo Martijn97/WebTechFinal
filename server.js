@@ -33,7 +33,7 @@ app.get('/insta_auth', (req, res) => {
 	let accessCode = req.query.code;
 	console.log(accessCode);
 
-	request.post(
+	request.post('https://api.instagram.com/oauth/access_token',
 	{
 		form: {
 			client_id: '1159204fb5b94378904fa06932f07da6',
@@ -41,8 +41,7 @@ app.get('/insta_auth', (req, res) => {
 			grant_type: 'authorization_code',
 			redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
 			code: accessCode
-		},
-		url: 'https://api.instagram.com/oauth/access_token'
+		}
 	}, (err, response, body) => {
 		if (err) {
 			console.log("Error in posting", err);

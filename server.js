@@ -27,6 +27,8 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/auth', (req, res) => {
 	console.log('arrived at auth!');
+	res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.redirect('https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/insta_auth&response_type=code&scope=public_content');
 });
 

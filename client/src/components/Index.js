@@ -10,13 +10,11 @@ export default class Index extends React.Component {
 	}
 
 	getAuthLink() {
-		axios.get('/auth')
-			.then((req, res) => {
-				console.log(res);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+		axios.get('/auth', {
+			 headers: {
+        		'Accept': 'application/json'
+      		}
+		});
 	}
 
 	render() {

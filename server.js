@@ -31,6 +31,7 @@ app.get('/auth', (req, res) => {
 
 app.get('/insta_auth', (req, res) => {
 	console.log('arrived at insta auth!');
+	res.send('yay we got at insta auth!');
 })
 
 

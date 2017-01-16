@@ -7,7 +7,7 @@ import Index from './components/Index';
 const routes = (
 	<Route path="/" component={App}>
 		<IndexRoute component={Index}/>
-		<Route path="/home(/:access_token)" component={Home}/>
+		<Route path="/home/:access_token" component={Home}/>
 	</Route>
 );
 

@@ -49,35 +49,10 @@ app.get('/insta_auth', (req, res) => {
 		if (err) {
 			console.log("Error in posting", err);
 		} else {
-			res.send(body);
+			res.send(response);
 		}
 	})
 });
-
-
-// app.get('/auth', (req, res) => {
-// 	console.log('arrived at auth!');
-// 	let accessCode = req.query.code;
-
-// 	request.post(
-// 	{
-// 		form: {
-// 			client_id: '1159204fb5b94378904fa06932f07da6',
-// 			client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
-// 			grant_type: 'authorization_code',
-// 			redirect_uri: 'http://webtechnologytue.herokuapp.com/auth',
-// 			code: accessCode
-// 		},
-// 		url: 'https://api.instagram.com/oauth/access_token'
-// 	}, (err, response, body) => {
-// 		if (err) {
-// 			console.log("Error in posting", err);
-// 		} else {
-// 			console.log(response);
-// 			console.log(body.json());
-// 		}
-// 	})
-// });
 
 app.get('/*', (req, res) => {
 	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
@@ -92,13 +67,6 @@ app.get('/*', (req, res) => {
 		}
 	});
 });
-
-
-
-// res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
-
-
-
 
 // app.get('/searchbytag/:tag', (req, res) => {
 // 	let tagName = req.params.tag;

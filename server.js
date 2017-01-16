@@ -47,7 +47,8 @@ app.get('/insta_auth', (req, res) => {
 		if (err) {
 			console.log("Error in posting", err);
 		} else {
-			res.send(Object.values(response.body));
+			// res.send(Object.values(response.body));
+			res.send(Object.keys(response.body).map(function(key){return response.body[key]}));
 		}
 	})
 });

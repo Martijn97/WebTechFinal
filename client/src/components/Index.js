@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Button, Icon} from 'react-materialize';
 import axios from 'axios';
+import jsonp from 'jsonp';
 
 export default class Index extends React.Component {
 
@@ -10,10 +11,12 @@ export default class Index extends React.Component {
 	}
 
 	getAuthLink() {
-		axios.get('/auth', {
-			 headers: {
-        		'Accept': 'application/json'
-      		}
+		jsonp('/auth', null, (err, data) => {
+			if (err) {
+				console.error(err.message);
+			} else {
+				console.log(data);
+			}
 		});
 	}
 

@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/auth', (req, res) => {
+	console.log('arrived at auth!');
 	let accessCode = req.query.code;
 
 	request.post(

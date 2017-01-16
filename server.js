@@ -36,15 +36,13 @@ app.get('/insta_auth', (req, res) => {
 
 	request.post('https://api.instagram.com/oauth/access_token',
 	{	
-		json: {
-			form: {
-				client_id: '1159204fb5b94378904fa06932f07da6',
-				client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
-				grant_type: 'authorization_code',
-				redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
-				code: accessCode
-			}
-		}	
+		form: {
+			client_id: '1159204fb5b94378904fa06932f07da6',
+			client_secret: '07dbbb23552d4c77929cd70986bbe8a3',
+			grant_type: 'authorization_code',
+			redirect_uri: 'http://webtechnologytue.herokuapp.com/insta_auth',
+			code: accessCode
+		}
 	}, (err, response, body) => {
 		if (err) {
 			console.log("Error in posting", err);

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row, Col, Button, Icon} from 'react-materialize';
-import axios from 'axios';
 import jsonp from 'jsonp';
 
 export default class Index extends React.Component {

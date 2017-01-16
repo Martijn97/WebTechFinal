@@ -43,7 +43,7 @@ exports.insta_auth = (req, res) => {
 			console.log(err.body);
 			res.send("Didn't work");
 		} else {
-			let homeRedirectUrl = '/home/' + result.access_token
+			let homeRedirectUrl = '/home/' + result.access_token;
 			res.redirect(homeRedirectUrl);
 		}
 	});
@@ -64,6 +64,8 @@ app.get('/*', (req, res) => {
 			res.status(404).send('Not found!');
 		}
 	});
+
+	res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 
 // app.get('/searchbytag/:tag', (req, res) => {

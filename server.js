@@ -34,8 +34,6 @@ app.get('/insta_auth', (req, res) => {
 	let accessCode = req.query.code;
 	console.log(accessCode);
 
-	res.send(accessCode);
-
 	request.post('https://api.instagram.com/oauth/access_token',
 	{	
 		json: {

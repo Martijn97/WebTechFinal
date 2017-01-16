@@ -27,8 +27,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 instagram.use({
-	client_id: 1159204fb5b94378904fa06932f07da6,
-	client_secret: 07dbbb23552d4c77929cd70986bbe8a3
+	client_id: "1159204fb5b94378904fa06932f07da6",
+	client_secret: "07dbbb23552d4c77929cd70986bbe8a3"
 });
 
 let redirect_uri = "http://webtechnologytue.herokuapp.com/insta_auth";

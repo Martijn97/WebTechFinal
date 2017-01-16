@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/client/build'));
 }
 
-app.get('/auth', (req, res, next) => {
+app.get('/auth', (req, res) => {
 	console.log('arrived at auth!');
 	res.redirect('https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/insta_auth&response_type=code&scope=public_content');
 });

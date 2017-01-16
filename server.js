@@ -43,7 +43,8 @@ exports.insta_auth = (req, res) => {
 			console.log(err.body);
 			res.send("Didn't work");
 		} else {
-			res.redirect('/home/?access_token=' + result.access_token);
+			let homeRedirectUrl = '/home/' + result.access_token
+			res.redirect(homeRedirectUrl);
 		}
 	});
 };

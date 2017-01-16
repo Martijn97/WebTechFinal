@@ -68,7 +68,7 @@ export default class Home extends React.Component {
 		for (let i = 0; i < 15; i++) {
 			cardItems.push(
 				<Col s={12} m={6} l={4} key={i}>
-				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='cat_1.jpg'>Cute kitty</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='#'>Link to Post</a>]}>
+				    <Card className='blue-grey darken-0 materialboxed white-text' header={<CardTitle image='/images/cat_1.jpg'>Cute kitty</CardTitle>} style={{minHeight: "350px"}} actions={[<a href='#'>Link to Post</a>]}>
 				    	cute!
 				    </Card>
 				</Col>

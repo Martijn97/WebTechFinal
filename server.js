@@ -49,6 +49,10 @@ exports.insta_auth = (req, res) => {
 	});
 };
 
+app.get('/home', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+});
+
 app.get('/auth', exports.authorize_user);
 app.get('/insta_auth', exports.insta_auth);
 
@@ -64,8 +68,6 @@ app.get('/*', (req, res) => {
 			res.status(404).send('Not found!');
 		}
 	});
-
-	res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 
 // app.get('/searchbytag/:tag', (req, res) => {

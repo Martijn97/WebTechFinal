@@ -25,27 +25,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/auth', (req, res) => {
-	res.redirect('https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/home&response_type=code&scope=public_content');
-	next();
-});
-
-app.get('/*', (req, res) => {
-
-	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-		if (error) {
-			res.status(500).send(error.message);
-		} else if(redirectLocation) {
-			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-		} else if (renderProps) {
-			res.status(200).send(ReactDOM.renderToString(React.createElement(RouterContext, renderProps)));
-		} else {
-			res.status(404).send('Not found!');
-		}
-	});
-
-});
-
-app.get('/home', (req, res) => {
 	let accessCode = req.query.code;
 
 	request.post(
@@ -67,6 +46,21 @@ app.get('/home', (req, res) => {
 		}
 	})
 });
+
+app.get('/*', (req, res) => {
+	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
+		if (error) {
+			res.status(500).send(error.message);
+		} else if(redirectLocation) {
+			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+		} else if (renderProps) {
+			res.status(200).send(ReactDOM.renderToString(React.createElement(RouterContext, renderProps)));
+		} else {
+			res.status(404).send('Not found!');
+		}
+	});
+});
+
 
 
 // res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));

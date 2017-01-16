@@ -8,7 +8,6 @@ const routes = (
 	<Route path="/" component={App}>
 		<IndexRoute component={Index}/>
 		<Route path="/home" component={Home}/>
-		<Route path="/auth"/>
 	</Route>
 );
 

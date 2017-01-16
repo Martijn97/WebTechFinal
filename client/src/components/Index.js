@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row, Col, Button, Icon} from 'react-materialize';
-import {Link} from 'react-router';
 
 export default class Index extends React.Component {
 	render() {
@@ -12,11 +11,11 @@ export default class Index extends React.Component {
 				</Row>
 				<Row>
 					<Col s={12} style={{"textAlign": "center"}}>
-						<Link to={'/auth'}>
+						<a href={"https://api.instagram.com/oauth/authorize/?client_id=1159204fb5b94378904fa06932f07da6&redirect_uri=http://webtechnologytue.herokuapp.com/auth&response_type=code&scope=public_content"}>
 							<Button style={{"textAlign": "center"}} className="teal">
 								Authenticate<Icon>person</Icon>
 							</Button>
-						</Link>
+						</a>
 					</Col>
 				</Row>
 			</div>

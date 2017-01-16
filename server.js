@@ -49,7 +49,10 @@ app.get('/insta_auth', (req, res) => {
 		if (err) {
 			console.log("Error in posting", err);
 		} else {
-			res.send(body);
+			let callback = (req, res, next) => {
+				res.send('it works!');
+				next();
+			}
 		}
 	})
 });
